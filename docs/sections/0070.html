@@ -1,0 +1,240 @@
+
+<html>
+<head>
+<title>0070</title>
+    <link rel="stylesheet" href="../css/my.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
+   <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+</head>
+<body bgcolor="#44a0dd">
+<a href="../#/list_of_plots" class="button"> List of Plots </a>
+
+<div id="0070_time" style="width: 800px; height: 600px; margin: 125 auto"></div>
+<div id="0070_speed" style="width: 800px; height: 600px; margin: 125 auto"></div>
+
+<script language="JavaScript">
+$(document).ready(function() {
+    // Define and initialize "options"
+    options49 = {
+       chart: {
+            renderTo: '0070_time',
+            zoomType: 'x'
+       },
+       title: { text: 'Time in second (section 0070)' },
+       xAxis: { type: 'datetime', ordinal: false 
+,plotLines: [
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1394625600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1398427200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1405080000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1410609600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1418126400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1425729600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1436961600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1450440000000,
+          width: 1
+        },
+]
+ },
+       yAxis: { title: { text: 'Time (s)' }//,
+        //min: 0, max: 15,
+        //plotLines: [{
+        //  color: 'red',
+        //  dashStyle: 'longdashdot',
+        //  value: 13.4112,
+        //  width: 1
+        //},
+        //{
+        //  color: 'blue',
+        //  dashStyle: 'longdashdot',
+        //  value: 8.9408,
+        //  width: 1
+        //}
+        //],
+       },
+       series: []
+    };
+
+    // Read datafile
+    $.get('../data/0070_time.csv', function(data) {
+        var series49 = { data: [], name: 'Time taken to sross section 0070' };
+        // Split the lines
+        var lines = data.split('\n');
+        // Slit each line into items separated by commas
+        $.each(lines, function(lineNo, line) {
+            var items = line.split(',');
+            // Add 3600 for timezone offset and multiply by 1000 to have time in ms
+            t=parseInt(items[0]);
+            val1=parseFloat(items[1]);
+            // Add to series if conversion was successful
+            if(!isNaN(val1)) series49.data.push([t, val1]);
+        });
+
+        // Push the completed series
+        options49.series.push(series49);
+        // Create the plot
+        new Highcharts.stockChart(options49);
+    });
+});
+</script>
+
+<script language="JavaScript">
+$(document).ready(function() {
+    // Define and initialize "options"
+    options149 = {
+       chart: {
+            renderTo: '0070_speed',
+            zoomType: 'x'
+       },
+       title: { text: 'Speed in meters per second (section 0070)' },
+       xAxis: { type: 'datetime', ordinal: false 
+,plotLines: [
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1394625600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1398427200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1405080000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1410609600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1418126400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1425729600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1436961600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1450440000000,
+          width: 1
+        },
+]
+ },
+       yAxis: { title: { text: 'Speed (m/s)' }//,
+        //min: 0, max: 15,
+        //plotLines: [{
+        //  color: 'red',
+        //  dashStyle: 'longdashdot',
+        //  value: 13.4112,
+        //  width: 1
+        //},
+        //{
+        //  color: 'blue',
+        //  dashStyle: 'longdashdot',
+        //  value: 8.9408,
+        //  width: 1
+        //}
+        //],
+       },
+       series: []
+    };
+
+    // Read datafile
+    $.get('../data/0070_speed.csv', function(data) {
+        var series149 = { data: [], name: 'Speed at section 0070' };
+        // Split the lines
+        var lines = data.split('\n');
+        // Slit each line into items separated by commas
+        $.each(lines, function(lineNo, line) {
+            var items = line.split(',');
+            // Add 3600 for timezone offset and multiply by 1000 to have time in ms
+            t=parseInt(items[0]);
+            val1=parseFloat(items[1]);
+            // Add to series if conversion was successful
+            if(!isNaN(val1)) series149.data.push([t, val1]);
+        });
+
+        // Push the completed series
+        options149.series.push(series149);
+        // Create the plot
+        new Highcharts.stockChart(options149);
+    });
+});
+</script>
+
+
+</body>
+</html>

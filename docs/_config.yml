@@ -1,0 +1,7 @@
+# Site settings
+title: Bristol Journey Times
+email: K.Sokol@bristol.ac.uk
+baseurl: "/junction" # the subpath of your site, e.g. /blog/
+url: "https://So-Cool.github.io" # the base hostname & protocol for your site
+repo: "https://github.com/So-Cool/junction"
+author: Kacper Sokol

@@ -1,0 +1,49 @@
+
+<html>
+<head>
+<title>00117</title>
+    <link rel="stylesheet" href="../css/my.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
+   <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+</head>
+<body bgcolor="#44a0dd">
+<a href="../#/rain" class="button"> List of Plots </a>
+<div id="container" style="min-width: 310px; max-width: 800px; height: 600px; margin: 125 auto"></div>
+
+  <script>
+Highcharts.chart('container', {
+    title: {
+        text: 'Average monthly travel times'
+    },
+    subtitle: {
+        text: 'Corelation: 0.574561'
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    },
+    series: [{
+        type: 'column',
+        name: 'Average Rainfall',
+        data: [669.68986655591618, 520.86989621015709, 669.68986655591618, 297.63994069151829, 520.86989621015709, 372.04992586439789, 297.63994069151829, 520.86989621015709, 595.27988138303658, 669.68986655591618, 744.09985172879578, 595.27988138303658]
+    }, {
+        type: 'column',
+        name: '00117',
+        data: [541.483087400681, 528.9327228327228, 541.3299435028249, 527.8109860766737, 517.0950258094791, 527.5581229156742, 541.4168534289556, 547.6710881294964, 550.9389932730224, 547.4986504723347, 562.0290225214767, 539.9042136771817]
+    }
+    //, {
+    //    type: 'spline',
+    //    name: 'Average',
+    //    data: [541.483087400681, 528.9327228327228, 541.3299435028249, 527.8109860766737, 517.0950258094791, 527.5581229156742, 541.4168534289556, 547.6710881294964, 550.9389932730224, 547.4986504723347, 562.0290225214767, 539.9042136771817],
+    //    marker: {
+    //        lineWidth: 2,
+    //        lineColor: Highcharts.getOptions().colors[0],
+    //        fillColor: 'red'
+    //    }
+    //}
+    ]
+});
+  </script>
+</body>
+</html>
+

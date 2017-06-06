@@ -1,0 +1,43 @@
+.blue {
+  color: #44a0dd;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+a.tb {
+  color: white;
+}
+
+@font-face {
+    font-family: Asphalt;
+    src: url("../lib/font/asphalt.otf") format("opentype");
+}
+
+/*ua { padding-left:20px; list-style:none; }*/
+/*la { margin-bottom:10px; }*/
+/*la:before {*/
+    /*font-family: 'FontAwesome';*/
+    /*content: '\f0eb';*/
+    /*margin:0 5px 0 -15px;*/
+    /*color: yellow;*/
+/*}*/

@@ -1,0 +1,422 @@
+
+<html>
+<head>
+<title>00168</title>
+    <link rel="stylesheet" href="../css/my.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
+   <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+</head>
+<body bgcolor="#44a0dd">
+<a href="../#/list_of_plots" class="button"> List of Plots </a>
+
+<div id="00168_time" style="width: 800px; height: 600px; margin: 125 auto"></div>
+<div id="00168_speed" style="width: 800px; height: 600px; margin: 125 auto"></div>
+
+<script language="JavaScript">
+$(document).ready(function() {
+    // Define and initialize "options"
+    options32 = {
+       chart: {
+            renderTo: '00168_time',
+            zoomType: 'x'
+       },
+       title: { text: 'Time in second (section 00168)' },
+       xAxis: { type: 'datetime', ordinal: false 
+,plotLines: [
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1388836800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1392465600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1389960000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1390132800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1399377600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400155200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400155200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400846400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1409227200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1415793600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1421150400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1425211200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1430481600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1430827200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1434456000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1431777600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1441540800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1440504000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1445947200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1445169600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1449489600000,
+          width: 1
+        },
+]
+ },
+       yAxis: { title: { text: 'Time (s)' }//,
+        //min: 0, max: 15,
+        //plotLines: [{
+        //  color: 'red',
+        //  dashStyle: 'longdashdot',
+        //  value: 13.4112,
+        //  width: 1
+        //},
+        //{
+        //  color: 'blue',
+        //  dashStyle: 'longdashdot',
+        //  value: 8.9408,
+        //  width: 1
+        //}
+        //],
+       },
+       series: []
+    };
+
+    // Read datafile
+    $.get('../data/00168_time.csv', function(data) {
+        var series32 = { data: [], name: 'Time taken to sross section 00168' };
+        // Split the lines
+        var lines = data.split('\n');
+        // Slit each line into items separated by commas
+        $.each(lines, function(lineNo, line) {
+            var items = line.split(',');
+            // Add 3600 for timezone offset and multiply by 1000 to have time in ms
+            t=parseInt(items[0]);
+            val1=parseFloat(items[1]);
+            // Add to series if conversion was successful
+            if(!isNaN(val1)) series32.data.push([t, val1]);
+        });
+
+        // Push the completed series
+        options32.series.push(series32);
+        // Create the plot
+        new Highcharts.stockChart(options32);
+    });
+});
+</script>
+
+<script language="JavaScript">
+$(document).ready(function() {
+    // Define and initialize "options"
+    options132 = {
+       chart: {
+            renderTo: '00168_speed',
+            zoomType: 'x'
+       },
+       title: { text: 'Speed in meters per second (section 00168)' },
+       xAxis: { type: 'datetime', ordinal: false 
+,plotLines: [
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1388836800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1392465600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1389960000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1390132800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1399377600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400155200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400155200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400846400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1409227200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1415793600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1421150400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1425211200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1430481600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1430827200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1434456000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1431777600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1441540800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1440504000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1445947200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1445169600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1449489600000,
+          width: 1
+        },
+]
+ },
+       yAxis: { title: { text: 'Speed (m/s)' }//,
+        //min: 0, max: 15,
+        //plotLines: [{
+        //  color: 'red',
+        //  dashStyle: 'longdashdot',
+        //  value: 13.4112,
+        //  width: 1
+        //},
+        //{
+        //  color: 'blue',
+        //  dashStyle: 'longdashdot',
+        //  value: 8.9408,
+        //  width: 1
+        //}
+        //],
+       },
+       series: []
+    };
+
+    // Read datafile
+    $.get('../data/00168_speed.csv', function(data) {
+        var series132 = { data: [], name: 'Speed at section 00168' };
+        // Split the lines
+        var lines = data.split('\n');
+        // Slit each line into items separated by commas
+        $.each(lines, function(lineNo, line) {
+            var items = line.split(',');
+            // Add 3600 for timezone offset and multiply by 1000 to have time in ms
+            t=parseInt(items[0]);
+            val1=parseFloat(items[1]);
+            // Add to series if conversion was successful
+            if(!isNaN(val1)) series132.data.push([t, val1]);
+        });
+
+        // Push the completed series
+        options132.series.push(series132);
+        // Create the plot
+        new Highcharts.stockChart(options132);
+    });
+});
+</script>
+
+
+</body>
+</html>

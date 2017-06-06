@@ -1,0 +1,11 @@
+# MacOS
+*.DS_Store
+
+# Python
+*.pyc
+
+# Jekyll
+*_site/
+
+# Temp
+*_ext/

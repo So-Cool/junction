@@ -1,0 +1,709 @@
+<html>
+    <head>
+        <title>Bristol Travel Times</title>
+        <link rel="stylesheet" href="lib/font/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/my_theme.css">
+        <link rel="stylesheet" href="css/my.css">
+        <script src="lib/underscore.js"></script>
+        <script src="js/mapper.js"></script>
+        <script src="js/reveal.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+      <section>
+        <section data-background-image="img/tarmac.jpg">
+          <div style="width: 960px; top: 0px; margin: auto;"><!-- position: absolute;-->
+                <h1 style="font-size: 110px; font-family: Asphalt; color: yellow;";>Junction</h1>
+          </div>
+          <div style="width: 800px; left: 0px; top: 0px; height: auto; margin: auto; margin-top: 50px;">
+              <h2 style="font-size: 80px; color: white;">Modelling journey times in Bristol</h2>
+         </div>
+          <div style="width: 960px; bottom: 0em; font-size: 37px; color: white;">
+            <b>Kacper Sokol</b>
+         </div>
+        </section>
+        <section>
+          <h3>How to use this presentation</h3>
+          <p>All the figures are interactive:</p>
+          <div style="width: 95%">
+                <img src="img/guide_ts_zoom.png" width="200px">
+                <img src="img/guide_heat_tooltip.png" width="200px">
+                <img src="img/guide_bar.png" width="200px">
+                <img src="img/guide_heat_select.png" width="200px">
+          </div>
+          <p>Press &lt;esc&gt; key to see the outline of this presentation:</p>
+          <img src="img/guide_outline.png" width="300px">
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>The Data</h2>
+          <div style="text-align: left; margin: auto; width: 80%;">
+            <i class="fa fa-lightbulb-o" aria-hidden="true" style="color: yellow;"></i>&nbsp;Plots made with <a href="https://www.highcharts.com/" style="color: green;">Highcharts</a><br>
+            <i class="fa fa-lightbulb-o" aria-hidden="true" style="color: yellow;"></i>&nbsp;<i>Speed</i> and <i>travel time</i> line plots for each road section (contrasted against road accidents in the area &mdash; red dashed lines<a href="https://data.gov.uk/dataset/road-accidents-safety-data" style="font-size:18px;">source</a>)<br>
+            <i class="fa fa-lightbulb-o" aria-hidden="true" style="color: yellow;"></i>&nbsp;<i>Average monthly travel time</i> bar charts for each road section (contrasted against relative monthly rain forecast<a href="http://www.holiday-weather.com/bristol/averages/" style="font-size:18px;">source</a>)<br>
+            <i class="fa fa-lightbulb-o" aria-hidden="true" style="color: yellow;"></i>&nbsp;the analysis and the plots are done all automatically via Python scripts (in form of Jupyter notebooks) available in the <a href="https://github.com/So-Cool/junction" style="color: white;" target="_blank">Junction GitHub</a> repository
+          </div>
+
+        </section>
+        <section id="list_of_plots">
+          <h2><i>Speed</i> and <i>travel time</i></h2>
+        <table>
+</tr>
+<tr>
+<td><a class="tb" href="sections/00001.html">00001</a></td>
+<td><a class="tb" href="sections/00022.html">00022</a></td>
+<td><a class="tb" href="sections/00028.html">00028</a></td>
+<td><a class="tb" href="sections/0003.html">0003</a></td>
+<td><a class="tb" href="sections/00030.html">00030</a></td>
+<td><a class="tb" href="sections/00036.html">00036</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="sections/0004.html">0004</a></td>
+<td><a class="tb" href="sections/00046.html">00046</a></td>
+<td><a class="tb" href="sections/00063.html">00063</a></td>
+<td><a class="tb" href="sections/00073.html">00073</a></td>
+<td><a class="tb" href="sections/00078.html">00078</a></td>
+<td><a class="tb" href="sections/00079.html">00079</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="sections/00104.html">00104</a></td>
+<td><a class="tb" href="sections/00109.html">00109</a></td>
+<td><a class="tb" href="sections/0011.html">0011</a></td>
+<td><a class="tb" href="sections/00111.html">00111</a></td>
+<td><a class="tb" href="sections/00115.html">00115</a></td>
+<td><a class="tb" href="sections/00116.html">00116</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="sections/00117.html">00117</a></td>
+<td><a class="tb" href="sections/0012.html">0012</a></td>
+<td><a class="tb" href="sections/00124.html">00124</a></td>
+<td><a class="tb" href="sections/00125.html">00125</a></td>
+<td><a class="tb" href="sections/00126.html">00126</a></td>
+<td><a class="tb" href="sections/00127.html">00127</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="sections/00128.html">00128</a></td>
+<td><a class="tb" href="sections/00129.html">00129</a></td>
+<td><a class="tb" href="sections/00130.html">00130</a></td>
+<td><a class="tb" href="sections/00131.html">00131</a></td>
+<td><a class="tb" href="sections/00135.html">00135</a></td>
+<td><a class="tb" href="sections/00136.html">00136</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="sections/0014.html">0014</a></td>
+<td><a class="tb" href="sections/0015.html">0015</a></td>
+<td><a class="tb" href="sections/00168.html">00168</a></td>
+<td><a class="tb" href="sections/00169.html">00169</a></td>
+<td><a class="tb" href="sections/00175.html">00175</a></td>
+<td><a class="tb" href="sections/00176.html">00176</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="sections/0021.html">0021</a></td>
+<td><a class="tb" href="sections/0035.html">0035</a></td>
+<td><a class="tb" href="sections/0037.html">0037</a></td>
+<td><a class="tb" href="sections/0038.html">0038</a></td>
+<td><a class="tb" href="sections/0039.html">0039</a></td>
+<td><a class="tb" href="sections/0040.html">0040</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="sections/0044.html">0044</a></td>
+<td><a class="tb" href="sections/0045.html">0045</a></td>
+<td><a class="tb" href="sections/0050.html">0050</a></td>
+<td><a class="tb" href="sections/0053.html">0053</a></td>
+<td><a class="tb" href="sections/0056.html">0056</a></td>
+<td><a class="tb" href="sections/0058.html">0058</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="sections/0059.html">0059</a></td>
+<td><a class="tb" href="sections/0070.html">0070</a></td>
+<td><a class="tb" href="sections/0076.html">0076</a></td>
+        </table>
+        </section>
+        <section id="rain">
+        <h3><i>Average monthly travel time</i></h3>
+        <p style="font-size:20px;">(<i>cor</i> is the correlation coefficient between the travel time and scaled ``Raininess'' of the month)</p>
+        <table style="font-size: 55%;">
+<tr>
+<td><a class="tb" href="bars/00168.html">00168<br>(cor: 0.72)</a></td>
+<td><a class="tb" href="bars/00124.html">00124<br>(cor: 0.68)</a></td>
+<td><a class="tb" href="bars/00104.html">00104<br>(cor: 0.66)</a></td>
+<td><a class="tb" href="bars/00169.html">00169<br>(cor: 0.58)</a></td>
+<td><a class="tb" href="bars/00117.html">00117<br>(cor: 0.57)</a></td>
+<td><a class="tb" href="bars/00125.html">00125<br>(cor: 0.53)</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="bars/00116.html">00116<br>(cor: 0.53)</a></td>
+<td><a class="tb" href="bars/00001.html">00001<br>(cor: 0.48)</a></td>
+<td><a class="tb" href="bars/0053.html">0053<br>(cor: 0.42)</a></td>
+<td><a class="tb" href="bars/00131.html">00131<br>(cor: 0.40)</a></td>
+<td><a class="tb" href="bars/00111.html">00111<br>(cor: 0.25)</a></td>
+<td><a class="tb" href="bars/00109.html">00109<br>(cor: 0.25)</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="bars/00028.html">00028<br>(cor: 0.25)</a></td>
+<td><a class="tb" href="bars/00078.html">00078<br>(cor: 0.23)</a></td>
+<td><a class="tb" href="bars/00135.html">00135<br>(cor: 0.22)</a></td>
+<td><a class="tb" href="bars/00176.html">00176<br>(cor: 0.19)</a></td>
+<td><a class="tb" href="bars/00079.html">00079<br>(cor: 0.19)</a></td>
+<td><a class="tb" href="bars/0038.html">0038<br>(cor: 0.17)</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="bars/00126.html">00126<br>(cor: 0.16)</a></td>
+<td><a class="tb" href="bars/0076.html">0076<br>(cor: 0.13)</a></td>
+<td><a class="tb" href="bars/00130.html">00130<br>(cor: 0.11)</a></td>
+<td><a class="tb" href="bars/00128.html">00128<br>(cor: 0.08)</a></td>
+<td><a class="tb" href="bars/0050.html">0050<br>(cor: 0.06)</a></td>
+<td><a class="tb" href="bars/0056.html">0056<br>(cor: 0.03)</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="bars/00115.html">00115<br>(cor: 0.02)</a></td>
+<td><a class="tb" href="bars/00046.html">00046<br>(cor: 0.01)</a></td>
+<td><a class="tb" href="bars/00129.html">00129<br>(cor: -0.01)</a></td>
+<td><a class="tb" href="bars/0015.html">0015<br>(cor: -0.02)</a></td>
+<td><a class="tb" href="bars/00127.html">00127<br>(cor: -0.04)</a></td>
+<td><a class="tb" href="bars/0014.html">0014<br>(cor: -0.04)</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="bars/0044.html">0044<br>(cor: -0.04)</a></td>
+<td><a class="tb" href="bars/0021.html">0021<br>(cor: -0.05)</a></td>
+<td><a class="tb" href="bars/00073.html">00073<br>(cor: -0.14)</a></td>
+<td><a class="tb" href="bars/0058.html">0058<br>(cor: -0.17)</a></td>
+<td><a class="tb" href="bars/00136.html">00136<br>(cor: -0.18)</a></td>
+<td><a class="tb" href="bars/0003.html">0003<br>(cor: -0.22)</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="bars/0070.html">0070<br>(cor: -0.24)</a></td>
+<td><a class="tb" href="bars/00175.html">00175<br>(cor: -0.25)</a></td>
+<td><a class="tb" href="bars/0012.html">0012<br>(cor: -0.29)</a></td>
+<td><a class="tb" href="bars/0059.html">0059<br>(cor: -0.31)</a></td>
+<td><a class="tb" href="bars/0040.html">0040<br>(cor: -0.33)</a></td>
+<td><a class="tb" href="bars/0045.html">0045<br>(cor: -0.36)</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="bars/00063.html">00063<br>(cor: -0.37)</a></td>
+<td><a class="tb" href="bars/00030.html">00030<br>(cor: -0.39)</a></td>
+<td><a class="tb" href="bars/0011.html">0011<br>(cor: -0.42)</a></td>
+<td><a class="tb" href="bars/00036.html">00036<br>(cor: -0.49)</a></td>
+<td><a class="tb" href="bars/00022.html">00022<br>(cor: -0.55)</a></td>
+<td><a class="tb" href="bars/0004.html">0004<br>(cor: -0.55)</a></td>
+
+</tr>
+<tr>
+<td><a class="tb" href="bars/0039.html">0039<br>(cor: -0.59)</a></td>
+<td><a class="tb" href="bars/0037.html">0037<br>(cor: -0.59)</a></td>
+<td><a class="tb" href="bars/0035.html">0035<br>(cor: -0.61)</a></td>
+</tr>
+        </table>
+        </section>
+      </section>
+
+      <section>
+          <section>
+            <h2>Traffic patterns</h2>
+          </section>
+          <section>
+              <h3>Shift in mean travel time</h3>
+              <p style="font-size: 24px;">(click the image for interactive plot)</p>
+              <a href="sections/0021.html" target="_blank"><img height="500px" src="img/irregularities.svg"></a>
+          </section>
+          <section>
+              <h3>Local regularity</h3>
+              <p style="font-size: 24px;">(click the image for interactive plot)</p>
+              <a href="sections/00036.html" target="_blank"><img height="500px" src="img/local_reg.svg"></a>
+          </section>
+          <section>
+              <h3>Local irregularity</h3>
+              <p style="font-size: 24px;">(click the image for interactive plot)</p>
+              <a href="sections/0004.html" target="_blank"><img height="500px" src="img/local_irreg.svg"></a>
+          </section>
+      </section>
+
+      <section>
+          <section>
+            <h2>Traffic load</h2>
+          </section>
+          <section>
+              <h3>Average travel time per weekday</h3>
+              <p style="font-size: 24px;">As expected: rash-hours have higher travel times then middays and nights; weekends experience longer travel times afternoon and evening and lower in mornings and nights</p>
+              <div id="container36" style="width: 800px; height: 400px; margin: 0 auto"></div>
+          </section>
+          <section>
+              <h3>Average travel time per weekday</h3>
+              <p style="font-size: 24px;">This is the case in most of the monitored road sections...</p>
+              <div id="containert" style="width: 800px; height: 400px; margin: 0 auto"></div>
+          </section>
+          <section>
+              <h3>Average travel time per weekday</h3>
+              <p style="font-size: 24px;">...but sometimes it differ significantly!</p>
+              <p style="font-size: 24px;">This road is really busy during the night!</p>
+              <div id="containers" style="width: 800px; height: 400px; margin: 0 auto"></div>
+          </section>
+      </section>
+
+      <section>
+          <section>
+              <h2>How do large city events/festivals affect congestion?</h2>
+          </section>
+          <section>
+              <h3>Bristol International Balloon Fiesta</h3>
+              <h5>(Thursday, 11 August &mdash; Sunday, 14 August 2016)</h5>
+              <div style="width: 90%; margin: 0 auto;">
+              <div style="width: 45%;float: left;">
+              <p style="font-size: 34px; text-align: left;">In the given data a change of traffic patterns is most significantly affected on road section <b>0011</b> (Hotwell Rd OB to Portway OB), which is relatively close to where the Balloon Fiesta is happening.</p>
+              </div>
+              <div style="width: 45%;float: right;">
+                <img height="500px" src="img/map.png">
+              </div>
+              </div>
+          </section>
+          <section>
+              <h3>Influence on the travel time</h3>
+              <p style="font-size: 24px;">(click the image for interactive plot)</p>
+              <a href="sections/00130.html" target="_blank"><img height="500px" src="img/balloon.svg"></a>
+          </section>
+      </section>
+
+      <section>
+          <section>
+            <h2>Road accidents and journey times</h2>
+          </section>
+          <section>
+              <p style="font-size: 55%;">Analysing accidents influence on the journey times is a bit of a guess-work as the government dataset gives geographical location and the date (no specific time, therefore the red marker is always at 12pm). Also the accident is assigned to the nearest road section in the dataset (but no further than 1000m away).</p>
+              <a href="sections/0011.html" target="_blank"><img height="500px" src="img/accident.svg"></a>
+              <p style="font-size: 35%;">(click the image for interactive plot)</p>
+          </section>
+      </section>
+
+      <section>
+          <section>
+            <h2>How do weather patterns influence the traffic load?</h2><br>
+              <h3>🌧️ Analysing rain ☔</h3>
+          </section>
+          <section>
+            <p style="font-size: 65%;">7 out of 51 sections have significant positive correlation with rain (above 0.5). For example: <a href="bars/00168.html" style="color: white;" target="_blank">00168</a>, <a href="bars/00169.html" style="color: white;" target="_blank">00169</a> (reverse direction to 00168), 00124 and 00125 (reverse direction to 00124).</p>
+              <a href="bars/00168.html" target="_blank"><img height="450px" src="img/00168_rain.svg"></a>
+            <p style="font-size: 65%;">In Bristol <b>July</b> is the driest month and <b>November</b> is the rainiest.</p>
+          </section>
+          <section>
+            <p style="font-size: 65%;">5 out of 51 sections have significant negative correlation with rain (below -0.5). For example <a href="bars/0035.html" style="color: white;" target="_blank">0035</a> and its reverse direction <a href="bars/00036.html" style="color: white;" target="_blank">00036</a>.</p>
+              <a href="bars/0035.html" target="_blank"><img height="450px" src="img/0035_rain.svg"></a>
+          </section>
+      </section>
+
+      <section>
+          <section>
+              <h2>Time specific traffic patterns ⏰</h2>
+          </section>
+            <section>
+              <h4>Is there seasonal variation in the journey times?</h4>
+              <ul style="font-size: 65%;">
+                  <li>We can observe variation in day of the weeks (weekdays and weekends) and time of the day (morning and evening rash hours and steady afternoons and nights) all shown in previous slides...</li>
+                  <li>...but there is also variation due to holiday season, e.g. calm Christmas Day and busy Boxing day in 2016.</li>
+              </ul>
+              <a href="sections/00129.html" target="_blank"><img style="margin-top: 20px;" height="450px" src="img/00129_holiday.svg"></a>
+          </section>
+          <section>
+            <h4 style="font-size:90%">Is traffic bad at specific locations at specific times of the day?</h4>
+            <p style="font-size:50%; margin-bottom: 5px; margin-top: -15px;">In the morning more cars are coming into the city and in the evening more cars are leaving the city.</p>
+            <div id="flow1" style="width: 800px; height: 325px; margin: 0 auto"></div>
+            <div id="flow2" style="width: 800px; height: 325px; margin: 0 auto"></div>
+          </section>
+          <section id="journey_heat">
+            <h3>Does heavy traffic on one road section influence traffic on the others?</h3>
+            <div class="fragment">
+                <h4>Yes it does! Both positively and negatively.</h4>
+                <p>You can see the journey time <b>correlation heat map</b> <a href="heat.html" style="color: white;">HERE</a>.</p>
+                <p>For instance when the journey times at 00001 are high they are also high at 00030 and 00036 but at the same time they are low at 0015, 0050 and 0070.</p>
+            </div>
+          </section>
+      </section>
+
+      <section>
+          <section>
+            <h1>Challenges<br>and<br>Possibilities</h1>
+          </section>
+          <section>
+            <h2>Challenges</h2>
+            <ul style="width: 85%; font-size: 80%;">
+              <li>Without more detailed Bristol travel data (e.g. detailed location of traffic cameras, roads interconnections, detailed routes, number of cars for each speed measurement) it is difficult to look for interesting patterns &mdash; it is more labour intensive</li>
+              <li>Background knowledge such as accidents, roadworks and event calendar would help analyse the data</li>
+              <li>Also detailed weather data with daily resolution could help identify correlation between journey times and weather conditions such as wind, rain and temperature</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Possibilities</h2>
+            <ul style="width: 85%; font-size: 80%;">
+              <li><a style="color: gray;" href="https://www.openstreetmap.org">OpenStreet Map</a> API can be used to get location of traffic lights, number of lanes on the road, bus stops, bus lanes, etc.; it can also provide road details in a form of <i>polyline</i></li>
+              <li>Public transport data would facilitate comparison of car and bus journey times</li>
+              <li>Analysing sentiment of tweeter feeds of Bristol public transport companies and their customers could provide interesting insights when related to car travel times</li>
+            </ul>
+          </section>
+      </section>
+
+        <section data-background-image="img/tarmac.jpg">
+          <div style="width: 960px; top: 0px; margin: auto;"><!-- position: absolute;-->
+            <h1 style="font-size: 110px; font-family: Asphalt; color: yellow;";>Thank<br><br>you</h1>
+          </div>
+      </section>
+
+    </div>
+  </div>
+
+        <script>
+          Reveal.initialize({
+            width: 960,
+            height: 700,
+            minScale: 1,
+            maxScale: 1,
+            center: true,
+            controls: true,
+            progress: true,
+            history: true,
+            overview: true,
+            transition: 'fade', // none/fade/slide/convex/concave/zoom
+            transitionSpeed: 'default', // default/fast/slow
+            backgroundTransition: 'convex' // none/fade/slide/convex/concave/zoom
+          });
+        </script>
+
+        <!-- Bar Charts -->
+        <script language="JavaScript">
+        Highcharts.chart('containers', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Average travel times'
+            },
+            subtitle: {
+                text: 'ID: 0004, Jan-Mar 2015'
+            },
+            xAxis: {
+                categories: [
+                    'Mon',
+                    'Tue',
+                    'Wed',
+                    'Thu',
+                    'Fri',
+                    'Sat',
+                    'Sun'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Travel time (s)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0">{point.y:.1f}s</td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [
+        {
+                name: 'morning 07-08',
+                data: [213.31212765957446, 209.09748711340208, 488.59952380952382, 240.65120663650077, 264.54769133459837, 245.64043478260868, 198.35598441035955]
+        },
+        {
+                name: 'afternoon 09-14',
+                data: [171.28022657955697, 162.85694510347182, 213.83662039087793, 222.6964450376328, 196.344467421872, 176.25105056980055, 212.36743167060283]
+        },
+        {
+                name: 'evening 15-19',
+                data: [142.84668933650011, 112.79613787375415, 175.15268454042911, 124.8605589585768, 159.93395081001216, 111.85332722622999, 330.49707480021669]
+        },
+        {
+                name: 'night 20-06',
+                data: [394.52499669432177, 413.72933848440084, 379.06048976634906, 405.77301488167211, 566.06578551387588, 549.84847278450559, 451.47947078111559]
+        }
+                   ]
+        });
+        </script>
+        <script language="JavaScript">
+        Highcharts.chart('containert', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Average travel times'
+            },
+            subtitle: {
+                text: 'ID: 0004, Oct-Dec 2014'
+            },
+            xAxis: {
+                categories: [
+                    'Mon',
+                    'Tue',
+                    'Wed',
+                    'Thu',
+                    'Fri',
+                    'Sat',
+                    'Sun'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Travel time (s)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0">{point.y:.1f}s</td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [
+        {
+                name: 'morning 07-08',
+                data: [85.261985526910905, 103.9551282051282, 97.922127255460595, 104.03071928071928, 99.190695380568798, 44.159090909090907, 49.939393939393938]
+        },
+        {
+                name: 'afternoon 09-14',
+                data: [53.932581429223212, 57.403799034262057, 53.75096505953266, 54.452290464639951, 52.322836321311932, 59.877190388384427, 55.007696007696012]
+        },
+        {
+                name: 'evening 15-19',
+                data: [61.845956852224461, 59.467264957264959, 81.550955294841998, 76.319014467014469, 92.933187687915947, 64.878733954217822, 60.22016978383202]
+        },
+        {
+                name: 'night 20-06',
+                data: [49.330951574601315, 48.541404772983647, 47.485921568027472, 48.213332231694693, 50.396256842633242, 50.505835591409053, 48.014608628274999]
+        }
+                   ]
+        });
+        </script>
+        <script language="JavaScript">
+        Highcharts.chart('container36', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Average travel times'
+            },
+            subtitle: {
+                text: 'ID: 00036, 2014-2015'
+            },
+            xAxis: {
+                categories: [
+                    'Mon',
+                    'Tue',
+                    'Wed',
+                    'Thu',
+                    'Fri',
+                    'Sat',
+                    'Sun'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Travel time (s)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0">{point.y:.1f}s</td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [
+        {
+                name: 'morning 07-08',
+                data: [165.8969109630527, 169.73487841945291, 192.39221014492753, 177.79873279098874, 160.31826241134752, 112.61266628108734, 98.321419550391511]
+        },
+        {
+                name: 'afternoon 09-14',
+                data: [136.42410573634714, 133.60060813120219, 136.50168793085979, 141.2102561196069, 145.273968726758, 134.49887407227871, 123.957896709991]
+        },
+        {
+                name: 'evening 15-19',
+                data: [143.72311183259262, 161.13790451712126, 156.93374178688663, 166.09330866530559, 171.0950117647059, 125.97787189991327, 115.48262801252137]
+        },
+        {
+                name: 'night 20-06',
+                data: [94.092998728806748, 98.024186563424792, 97.469407390138215, 95.400626845448457, 91.724408798348605, 96.19801218691758, 90.95967540626431]
+        }
+                   ]
+        });
+        </script>
+        <!-- -->
+        <script>
+            Highcharts.chart('flow1', {
+                  chart: {
+                      type: 'column'
+                  },
+                  title: {
+                      text: 'Average travel times (into the city)'
+                  },
+                  subtitle: {
+                      text: 'ID: 00168; M32 J2 OB to Gloucester Rd @ Monks Park Ave OB'
+                  },
+                  xAxis: {
+                      categories: [
+                          'Mon',
+                          'Tue',
+                          'Wed',
+                          'Thu',
+                          'Fri',
+                          'Sat',
+                          'Sun'
+                      ],
+                      crosshair: true
+                  },
+                  yAxis: {
+                      min: 0,
+                      title: {
+                          text: 'Travel time (s)'
+                      }
+                  },
+                  tooltip: {
+                      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                          '<td style="padding:0">{point.y:.1f}s</td></tr>',
+                      footerFormat: '</table>',
+                      shared: true,
+                      useHTML: true
+                  },
+                  plotOptions: {
+                      column: {
+                          pointPadding: 0.2,
+                          borderWidth: 0
+                      }
+                  },
+                  series: [
+      {
+              name: 'morning 07-08',
+              data: [697.11044190561847, 765.22303503709691, 737.92975785986459, 757.74175549762424, 706.59762067022575, 483.56688498926405, 439.38787587412588]
+      },
+      {
+              name: 'afternoon 09-14',
+              data: [616.11239040648502, 638.88619485932406, 625.75953717787252, 620.0549206820333, 634.33636894641711, 648.93945933692146, 549.59887579540521]
+      },
+      {
+              name: 'evening 15-19',
+              data: [645.87979979328929, 694.74377662701681, 687.92061887968782, 659.7096178533991, 697.18551954726274, 617.45757332752544, 542.58304240570988]
+      },
+      {
+              name: 'night 20-06',
+              data: [420.19808623639653, 436.86315079127235, 414.23296210962849, 419.93329680960306, 435.04858795427839, 452.47617302697523, 419.57731626077748]
+      }
+                         ]
+              });
+        </script>
+        <script>
+            Highcharts.chart('flow2', {
+                  chart: {
+                      type: 'column'
+                  },
+                  title: {
+                      text: 'Average travel times (out of the city)'
+                  },
+                  subtitle: {
+                      text: 'ID: 00169; Gloucester Rd @ Monks Park Ave IB to M32 J2 IB'
+                  },
+                  xAxis: {
+                      categories: [
+                          'Mon',
+                          'Tue',
+                          'Wed',
+                          'Thu',
+                          'Fri',
+                          'Sat',
+                          'Sun'
+                      ],
+                      crosshair: true
+                  },
+                  yAxis: {
+                      min: 0,
+                      title: {
+                          text: 'Travel time (s)'
+                      }
+                  },
+                  tooltip: {
+                      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                          '<td style="padding:0">{point.y:.1f}s</td></tr>',
+                      footerFormat: '</table>',
+                      shared: true,
+                      useHTML: true
+                  },
+                  plotOptions: {
+                      column: {
+                          pointPadding: 0.2,
+                          borderWidth: 0
+                      }
+                  },
+                  series: [
+      {
+              name: 'morning 07-08',
+              data: [686.85007067656841, 719.22150650969729, 751.07815423270506, 695.31111588674776, 661.39908148868062, 503.59686399917109, 468.43622339603007]
+      },
+      {
+              name: 'afternoon 09-14',
+              data: [620.91798196850777, 664.20940631218275, 628.13737294426244, 631.31489885435803, 652.77485186530669, 635.68109780357167, 566.7632463574331]
+      },
+      {
+              name: 'evening 15-19',
+              data: [711.52280922188243, 784.71909514620597, 793.52095812201674, 774.81193225723428, 738.76934718212203, 607.7201316706105, 525.75859910691429]
+      },
+      {
+              name: 'night 20-06',
+              data: [403.28787782710174, 415.03571680490916, 405.29411839680836, 404.78466633932652, 429.87696784630464, 455.63814030858339, 409.13331690210981]
+      }
+                         ]
+              });
+        </script>
+    </body>
+</html>

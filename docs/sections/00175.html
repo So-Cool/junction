@@ -1,0 +1,828 @@
+
+<html>
+<head>
+<title>00175</title>
+    <link rel="stylesheet" href="../css/my.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
+   <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+</head>
+<body bgcolor="#44a0dd">
+<a href="../#/list_of_plots" class="button"> List of Plots </a>
+
+<div id="00175_time" style="width: 800px; height: 600px; margin: 125 auto"></div>
+<div id="00175_speed" style="width: 800px; height: 600px; margin: 125 auto"></div>
+
+<script language="JavaScript">
+$(document).ready(function() {
+    // Define and initialize "options"
+    options34 = {
+       chart: {
+            renderTo: '00175_time',
+            zoomType: 'x'
+       },
+       title: { text: 'Time in second (section 00175)' },
+       xAxis: { type: 'datetime', ordinal: false 
+,plotLines: [
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1389009600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1388836800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1391515200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1389096000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1391515200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1393329600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1391083200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1391515200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1395835200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1390478400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1397563200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1393070400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1394020800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1398686400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400241600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400760000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1402488000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1407499200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1405684800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1408449600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1410782400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1413374400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1412596800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1412769600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1414065600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1415793600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1417867200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1416744000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1417608000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1418558400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1420200000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1422014400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1421236800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1422878400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1427371200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1424520000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1426766400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1431950400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1431172800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1430654400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1432296000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1434369600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1436875200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1436270400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1437998400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1441800000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1432900800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1444910400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1448020800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1446292800000,
+          width: 1
+        },
+]
+ },
+       yAxis: { title: { text: 'Time (s)' }//,
+        //min: 0, max: 15,
+        //plotLines: [{
+        //  color: 'red',
+        //  dashStyle: 'longdashdot',
+        //  value: 13.4112,
+        //  width: 1
+        //},
+        //{
+        //  color: 'blue',
+        //  dashStyle: 'longdashdot',
+        //  value: 8.9408,
+        //  width: 1
+        //}
+        //],
+       },
+       series: []
+    };
+
+    // Read datafile
+    $.get('../data/00175_time.csv', function(data) {
+        var series34 = { data: [], name: 'Time taken to sross section 00175' };
+        // Split the lines
+        var lines = data.split('\n');
+        // Slit each line into items separated by commas
+        $.each(lines, function(lineNo, line) {
+            var items = line.split(',');
+            // Add 3600 for timezone offset and multiply by 1000 to have time in ms
+            t=parseInt(items[0]);
+            val1=parseFloat(items[1]);
+            // Add to series if conversion was successful
+            if(!isNaN(val1)) series34.data.push([t, val1]);
+        });
+
+        // Push the completed series
+        options34.series.push(series34);
+        // Create the plot
+        new Highcharts.stockChart(options34);
+    });
+});
+</script>
+
+<script language="JavaScript">
+$(document).ready(function() {
+    // Define and initialize "options"
+    options134 = {
+       chart: {
+            renderTo: '00175_speed',
+            zoomType: 'x'
+       },
+       title: { text: 'Speed in meters per second (section 00175)' },
+       xAxis: { type: 'datetime', ordinal: false 
+,plotLines: [
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1389009600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1388836800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1391515200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1389096000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1391515200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1393329600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1391083200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1391515200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1395835200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1390478400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1397563200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1393070400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1394020800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1398686400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400241600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1400760000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1402488000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1407499200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1405684800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1408449600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1410782400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1413374400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1412596800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1412769600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1414065600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1415793600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1417867200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1416744000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1417608000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1418558400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1420200000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1422014400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1421236800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1422878400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1427371200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1424520000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1426766400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1431950400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1431172800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1430654400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1432296000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1434369600000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1436875200000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1436270400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1437998400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1441800000000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1432900800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1444910400000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1448020800000,
+          width: 1
+        },
+
+        {
+          color: 'red',
+          dashStyle: 'longdashdot',
+          value: 1446292800000,
+          width: 1
+        },
+]
+ },
+       yAxis: { title: { text: 'Speed (m/s)' }//,
+        //min: 0, max: 15,
+        //plotLines: [{
+        //  color: 'red',
+        //  dashStyle: 'longdashdot',
+        //  value: 13.4112,
+        //  width: 1
+        //},
+        //{
+        //  color: 'blue',
+        //  dashStyle: 'longdashdot',
+        //  value: 8.9408,
+        //  width: 1
+        //}
+        //],
+       },
+       series: []
+    };
+
+    // Read datafile
+    $.get('../data/00175_speed.csv', function(data) {
+        var series134 = { data: [], name: 'Speed at section 00175' };
+        // Split the lines
+        var lines = data.split('\n');
+        // Slit each line into items separated by commas
+        $.each(lines, function(lineNo, line) {
+            var items = line.split(',');
+            // Add 3600 for timezone offset and multiply by 1000 to have time in ms
+            t=parseInt(items[0]);
+            val1=parseFloat(items[1]);
+            // Add to series if conversion was successful
+            if(!isNaN(val1)) series134.data.push([t, val1]);
+        });
+
+        // Push the completed series
+        options134.series.push(series134);
+        // Create the plot
+        new Highcharts.stockChart(options134);
+    });
+});
+</script>
+
+
+</body>
+</html>
