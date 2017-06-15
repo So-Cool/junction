@@ -24,8 +24,13 @@ a.button {
     font-size: 16px;
 }
 
+a {
+  text-decoration: underline;
+}
+
 a.tb {
   color: white;
+  text-decoration: underline;
 }
 
 @font-face {
