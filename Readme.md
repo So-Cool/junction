@@ -21,3 +21,8 @@ This repository contains code and links to data that was used to analyse traffic
 ## ToDo ##
 - [ ] If car journey times are bad, how does this affect alternative modes of transport?
 - [ ] Can congestion data link with sentiment mapping?
+
+---
+
+- [ ] SVG interactive road map; on click show travel time series below
+- [ ] general time range slider; change the colour of the road depending on the usage
